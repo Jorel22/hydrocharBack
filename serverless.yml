@@ -1,0 +1,30 @@
+org: jordym23
+app: darwin
+service: hydrochar
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  ecr:
+    images:
+      darks:
+        path: ./
+        file: Dockerfile
+  # runtime: python3.11
+  # region: us-east-1
+  # memorySize: 256
+  # versionFunctions: false
+
+
+functions:
+  back:
+    # handler: handler.handler
+    image:
+      name: darks
+    timeout: 200
+    # events:
+    #   - httpapi:
+    #         path: /predict
+    #         method: post
+    #         cors: true
