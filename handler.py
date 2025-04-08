@@ -24,12 +24,9 @@ class Predictor:
 
 
 def handler(event, context):
-    # inputs = [41.27, 6.43, 3.55, 82.54, 11.6, 500, 120, 200, 0.1]
     my_string = event["body"].strip('"')
     data = json.loads(my_string)
     inputs = data["input"]
     prd = Predictor()
     predictions = list(prd.predict(inputs))
-    print("predictions: ", predictions)
     return predictions
-    # return {"statusCode": 200, "body": predictions}
